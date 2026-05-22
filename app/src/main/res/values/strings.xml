@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Anime Cursor</string>
+    <string name="accessibility_service_label">Anime Cursor Control</string>
+    <string name="accessibility_service_description">Enables gesture injection (click, drag, scroll) for the Anime Cursor overlay app.</string>
+</resources>

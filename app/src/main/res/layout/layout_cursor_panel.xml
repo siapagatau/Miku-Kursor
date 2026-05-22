@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/panel_background"
+    android:elevation="20dp"
+    android:minWidth="180dp">
+
+    <!-- DRAG HANDLE / HEADER -->
+    <LinearLayout
+        android:id="@+id/panel_header"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:orientation="horizontal"
+        android:background="@drawable/panel_header_bg"
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:paddingEnd="6dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="⠿ Cursor Control"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.05" />
+
+        <ImageButton
+            android:id="@+id/btn_minimize"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:background="@drawable/btn_icon_bg"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:padding="4dp"
+            android:contentDescription="Minimize" />
+    </LinearLayout>
+
+    <!-- PANEL CONTENT -->
+    <LinearLayout
+        android:id="@+id/panel_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <!-- DPAD / JOYSTICK -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Move Cursor"
+            android:textColor="#CCCCFF"
+            android:textSize="10sp"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="monospace" />
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:columnCount="3"
+            android:rowCount="3"
+            android:layout_marginBottom="10dp">
+
+            <!-- Row 0 -->
+            <View android:layout_width="40dp" android:layout_height="40dp"
+                android:layout_column="0" android:layout_row="0" />
+
+            <ImageButton
+                android:id="@+id/btn_up"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_column="1" android:layout_row="0"
+                android:background="@drawable/dpad_btn_bg"
+                android:src="@android:drawable/arrow_up_float"
+                android:contentDescription="Up" />
+
+            <View android:layout_width="40dp" android:layout_height="40dp"
+                android:layout_column="2" android:layout_row="0" />
+
+            <!-- Row 1 -->
+            <ImageButton
+                android:id="@+id/btn_left"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_column="0" android:layout_row="1"
+                android:background="@drawable/dpad_btn_bg"
+                android:src="@android:drawable/arrow_down_float"
+                android:rotation="90"
+                android:contentDescription="Left" />
+
+            <!-- Center dot -->
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_column="1" android:layout_row="1"
+                android:background="@drawable/dpad_center_bg"
+                android:src="@android:drawable/radiobutton_on_background"
+                android:padding="10dp" />
+
+            <ImageButton
+                android:id="@+id/btn_right"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_column="2" android:layout_row="1"
+                android:background="@drawable/dpad_btn_bg"
+                android:src="@android:drawable/arrow_down_float"
+                android:rotation="270"
+                android:contentDescription="Right" />
+
+            <!-- Row 2 -->
+            <View android:layout_width="40dp" android:layout_height="40dp"
+                android:layout_column="0" android:layout_row="2" />
+
+            <ImageButton
+                android:id="@+id/btn_down"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_column="1" android:layout_row="2"
+                android:background="@drawable/dpad_btn_bg"
+                android:src="@android:drawable/arrow_down_float"
+                android:contentDescription="Down" />
+
+            <View android:layout_width="40dp" android:layout_height="40dp"
+                android:layout_column="2" android:layout_row="2" />
+        </GridLayout>
+
+        <!-- DIVIDER -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#44FFFFFF"
+            android:layout_marginBottom="8dp" />
+
+        <!-- ACTION BUTTONS -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Actions"
+            android:textColor="#CCCCFF"
+            android:textSize="10sp"
+            android:layout_marginBottom="6dp"
+            android:fontFamily="monospace" />
+
+        <!-- Row 1 of actions -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="4dp">
+
+            <Button
+                android:id="@+id/btn_click"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_weight="1"
+                android:text="👆 Click"
+                android:textSize="10sp"
+                android:background="@drawable/action_btn_bg"
+                android:textColor="#FFFFFF"
+                android:layout_marginEnd="4dp"
+                android:fontFamily="monospace" />
+
+            <Button
+                android:id="@+id/btn_double_click"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_weight="1"
+                android:text="👆👆 2x"
+                android:textSize="10sp"
+                android:background="@drawable/action_btn_bg"
+                android:textColor="#FFFFFF"
+                android:fontFamily="monospace" />
+        </LinearLayout>
+
+        <!-- Row 2 of actions -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="4dp">
+
+            <Button
+                android:id="@+id/btn_long_press"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_weight="1"
+                android:text="⏸ Hold"
+                android:textSize="10sp"
+                android:background="@drawable/action_btn_bg"
+                android:textColor="#FFFFFF"
+                android:layout_marginEnd="4dp"
+                android:fontFamily="monospace" />
+
+            <Button
+                android:id="@+id/btn_drag"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_weight="1"
+                android:text="⇥ Drag"
+                android:textSize="10sp"
+                android:background="@drawable/drag_btn_bg"
+                android:textColor="#FFFFFF"
+                android:fontFamily="monospace" />
+        </LinearLayout>
+
+        <!-- Row 3: scroll -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="4dp">
+
+            <Button
+                android:id="@+id/btn_scroll_up"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_weight="1"
+                android:text="↑ Scroll"
+                android:textSize="10sp"
+                android:background="@drawable/action_btn_bg"
+                android:textColor="#FFFFFF"
+                android:layout_marginEnd="4dp"
+                android:fontFamily="monospace" />
+
+            <Button
+                android:id="@+id/btn_scroll_down"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_weight="1"
+                android:text="↓ Scroll"
+                android:textSize="10sp"
+                android:background="@drawable/action_btn_bg"
+                android:textColor="#FFFFFF"
+                android:fontFamily="monospace" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

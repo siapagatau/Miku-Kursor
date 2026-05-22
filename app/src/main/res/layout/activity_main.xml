@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A0A16"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- HEADER -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingTop="16dp"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🖱️"
+                android:textSize="48sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Anime Cursor"
+                android:textColor="#EEEAFF"
+                android:textSize="26sp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.1"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Custom cursor overlay for Android"
+                android:textColor="#887799AA"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- STATUS CARD -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="System Status"
+                android:textColor="#CCBBFF"
+                android:textSize="13sp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.05"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:id="@+id/status_overlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚫ Overlay: Checking..."
+                android:textSize="12sp"
+                android:fontFamily="monospace"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/status_accessibility"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚫ Accessibility: Checking..."
+                android:textSize="12sp"
+                android:fontFamily="monospace"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/status_service"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚫ Service: Checking..."
+                android:textSize="12sp"
+                android:fontFamily="monospace" />
+        </LinearLayout>
+
+        <!-- PERMISSIONS CARD -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Permissions"
+                android:textColor="#CCBBFF"
+                android:textSize="13sp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.05"
+                android:layout_marginBottom="12dp" />
+
+            <Button
+                android:id="@+id/btn_grant_overlay"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:text="⚙ Grant Overlay Permission"
+                android:background="@drawable/primary_btn_bg"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="monospace" />
+
+            <Button
+                android:id="@+id/btn_grant_accessibility"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:text="♿ Enable Accessibility Service"
+                android:background="@drawable/primary_btn_bg"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:fontFamily="monospace" />
+        </LinearLayout>
+
+        <!-- CURSOR STYLE CARD -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cursor Style"
+                android:textColor="#CCBBFF"
+                android:textSize="13sp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.05"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Preview box -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@drawable/preview_bg"
+                android:gravity="center"
+                android:layout_marginBottom="14dp">
+
+                <ImageView
+                    android:id="@+id/iv_cursor_preview"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="fitCenter" />
+            </LinearLayout>
+
+            <!-- Size -->
+            <TextView
+                android:id="@+id/tv_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Size: 120px"
+                android:textColor="#AAAACC"
+                android:textSize="12sp"
+                android:fontFamily="monospace"
+                android:layout_marginBottom="4dp" />
+
+            <SeekBar
+                android:id="@+id/seek_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:progressTint="#9B7FFF"
+                android:thumbTint="#C0AAFF"
+                android:layout_marginBottom="14dp" />
+
+            <!-- Opacity -->
+            <TextView
+                android:id="@+id/tv_opacity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Opacity: 100%"
+                android:textColor="#AAAACC"
+                android:textSize="12sp"
+                android:fontFamily="monospace"
+                android:layout_marginBottom="4dp" />
+
+            <SeekBar
+                android:id="@+id/seek_opacity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:progressTint="#9B7FFF"
+                android:thumbTint="#C0AAFF"
+                android:layout_marginBottom="14dp" />
+
+            <!-- Custom image buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_pick_cursor"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:text="🖼 Custom Image"
+                    android:background="@drawable/primary_btn_bg"
+                    android:textColor="#FFFFFF"
+                    android:textSize="11sp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="monospace" />
+
+                <Button
+                    android:id="@+id/btn_reset_cursor"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:text="↺ Reset Default"
+                    android:background="@drawable/secondary_btn_bg"
+                    android:textColor="#CCCCFF"
+                    android:textSize="11sp"
+                    android:fontFamily="monospace" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- START/STOP BUTTON -->
+        <Button
+            android:id="@+id/btn_toggle_service"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="▶ Start Cursor"
+            android:background="@drawable/start_btn_bg"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:letterSpacing="0.08"
+            android:fontFamily="monospace"
+            android:layout_marginBottom="16dp" />
+
+        <!-- HOW TO USE -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How to Use"
+                android:textColor="#CCBBFF"
+                android:textSize="13sp"
+                android:fontFamily="monospace"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Grant Overlay Permission\n2. Enable Accessibility Service\n   (find 'Anime Cursor' in the list)\n3. Press ▶ Start Cursor\n\nAction Panel:\n• Drag the header to move the panel\n• Tap minimize button to collapse\n• Use D-Pad to move the cursor\n• Click / Double-click / Hold actions\n• Drag: tap once → move cursor → tap again to drop\n• Scroll Up/Down at cursor position"
+                android:textColor="#8888AA"
+                android:textSize="11.5sp"
+                android:lineSpacingMultiplier="1.6"
+                android:fontFamily="monospace" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
